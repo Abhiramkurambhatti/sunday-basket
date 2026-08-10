@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sunday-basket
+    env: node
+    region: singapore
+    plan: starter
+    buildCommand: npm install && npm run build && cp -r dist/* public/
+    startCommand: node server/server.js
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: ADMIN_KEY
+        value: admin123
+    disk:
+      name: sunday-basket-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1

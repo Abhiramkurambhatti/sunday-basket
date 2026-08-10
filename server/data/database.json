@@ -1,0 +1,344 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "Pomegranate",
+      "localName": "Anar",
+      "category": "Fruits",
+      "price": 199,
+      "unit": "1 kg",
+      "unitOptions": [
+        "1 kg",
+        "2 kg",
+        "3 kg",
+        "5 kg"
+      ],
+      "shortDescription": "Sweet, juicy ruby-red farm fresh pomegranates.",
+      "image": "/uploads/pomegranate.jpg",
+      "inStock": true,
+      "badge": "Bestseller",
+      "minQty": 1
+    },
+    {
+      "id": "p2",
+      "name": "Custard Apple",
+      "localName": "Sitaphal",
+      "category": "Fruits",
+      "price": 199,
+      "unit": "1 kg",
+      "unitOptions": [
+        "1 kg",
+        "2 kg",
+        "3 kg"
+      ],
+      "shortDescription": "Naturally sweet, creamy pulp handpicked at ideal ripeness.",
+      "image": "/uploads/sitaphal.jpg",
+      "inStock": true,
+      "badge": "Seasonal Special",
+      "minQty": 1
+    },
+    {
+      "id": "p3",
+      "name": "Farm Fresh Onion",
+      "localName": "Kanda / Pyaz",
+      "category": "Vegetables",
+      "price": 35,
+      "unit": "1 kg",
+      "unitOptions": [
+        "1 kg",
+        "2 kg",
+        "5 kg",
+        "10 kg"
+      ],
+      "shortDescription": "Essential daily cooking onions direct from Maharashtra farms.",
+      "image": "/uploads/onion.jpg",
+      "inStock": true,
+      "badge": "Farm Fresh",
+      "minQty": 1
+    },
+    {
+      "id": "p4",
+      "name": "Fresh Lemon",
+      "localName": "Nimbu",
+      "category": "Vegetables",
+      "price": 20,
+      "unit": "4 pcs",
+      "unitOptions": [
+        "4 pcs",
+        "8 pcs",
+        "12 pcs",
+        "20 pcs"
+      ],
+      "shortDescription": "Juicy, full of flavor lemons for daily refreshment.",
+      "image": "/uploads/lemon.jpg",
+      "inStock": true,
+      "badge": "Fresh Pick",
+      "minQty": 1
+    },
+    {
+      "id": "p5",
+      "name": "Fresh Curry Leaves",
+      "localName": "Kadipatta",
+      "category": "Herbs",
+      "price": 20,
+      "unit": "50 g",
+      "unitOptions": [
+        "50 g",
+        "100 g",
+        "250 g"
+      ],
+      "shortDescription": "Aromatic, fresh green curry leaves for authentic temperings.",
+      "image": "/uploads/curry_leaves.jpg",
+      "inStock": true,
+      "badge": "Aromatic",
+      "minQty": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": "SB-1005",
+      "status": "New",
+      "createdAt": "2026-08-10T18:58:34.857Z",
+      "items": [
+        {
+          "id": "p2",
+          "name": "Custard Apple",
+          "price": 199,
+          "unit": "1 kg",
+          "quantity": 2
+        },
+        {
+          "id": "p5",
+          "name": "Fresh Curry Leaves",
+          "price": 20,
+          "unit": "50 g",
+          "quantity": 1
+        }
+      ],
+      "customer": {
+        "fullName": "Pooja Patil",
+        "mobileNumber": "+91 91234 56789",
+        "flatNo": "C-102",
+        "societyName": "Aundh Residency",
+        "address": "DP Road, Aundh, Pune",
+        "landmark": "Near Westend Mall",
+        "instructions": "Please deliver before 6 PM."
+      },
+      "totalAmount": 418,
+      "paymentMethod": "Cash / UPI on Delivery"
+    },
+    {
+      "id": "SB-1004",
+      "status": "New",
+      "createdAt": "2026-08-10T17:32:31.239Z",
+      "items": [
+        {
+          "id": "p2",
+          "name": "Custard Apple",
+          "localName": "Sitaphal",
+          "category": "Fruits",
+          "price": 199,
+          "unit": "1 kg",
+          "unitOptions": [
+            "1 kg",
+            "2 kg",
+            "3 kg"
+          ],
+          "shortDescription": "Naturally sweet, creamy pulp handpicked at ideal ripeness.",
+          "image": "/uploads/sitaphal.jpg",
+          "inStock": true,
+          "badge": "Seasonal Special",
+          "minQty": 1,
+          "quantity": 1
+        }
+      ],
+      "customer": {
+        "fullName": "Abhiram kurambhatti",
+        "mobileNumber": "9552050093",
+        "flatNo": "B-1101",
+        "societyName": "Dreams Avani",
+        "address": "Pune, Maharashtra",
+        "landmark": "Manajri",
+        "instructions": "2 kg"
+      },
+      "totalAmount": 199,
+      "paymentMethod": "Cash / UPI on Delivery"
+    },
+    {
+      "id": "SB-1003",
+      "status": "New",
+      "createdAt": "2026-08-10T10:30:08.614Z",
+      "items": [
+        {
+          "id": "p3",
+          "name": "Farm Fresh Onion",
+          "localName": "Kanda / Pyaz",
+          "category": "Vegetables",
+          "price": 35,
+          "unit": "1 kg",
+          "unitOptions": [
+            "1 kg",
+            "2 kg",
+            "5 kg",
+            "10 kg"
+          ],
+          "shortDescription": "Essential daily cooking onions direct from Maharashtra farms.",
+          "image": "/uploads/onion.jpg",
+          "inStock": true,
+          "badge": "Farm Fresh",
+          "minQty": 1,
+          "quantity": 2
+        },
+        {
+          "id": "p4",
+          "name": "Fresh Lemon",
+          "localName": "Nimbu",
+          "category": "Vegetables",
+          "price": 20,
+          "unit": "4 pcs",
+          "unitOptions": [
+            "4 pcs",
+            "8 pcs",
+            "12 pcs",
+            "20 pcs"
+          ],
+          "shortDescription": "Juicy, full of flavor lemons for daily refreshment.",
+          "image": "/uploads/lemon.jpg",
+          "inStock": true,
+          "badge": "Fresh Pick",
+          "minQty": 1,
+          "quantity": 2
+        },
+        {
+          "id": "p2",
+          "name": "Custard Apple",
+          "localName": "Sitaphal",
+          "category": "Fruits",
+          "price": 199,
+          "unit": "1 kg",
+          "unitOptions": [
+            "1 kg",
+            "2 kg",
+            "3 kg"
+          ],
+          "shortDescription": "Naturally sweet, creamy pulp handpicked at ideal ripeness.",
+          "image": "/uploads/sitaphal.jpg",
+          "inStock": true,
+          "badge": "Seasonal Special",
+          "minQty": 1,
+          "quantity": 2
+        }
+      ],
+      "customer": {
+        "fullName": "Abhiram kurambhatti",
+        "mobileNumber": "9552050093",
+        "flatNo": "B-1101",
+        "societyName": "Dreams Avani",
+        "address": "Pune, Maharashtra",
+        "landmark": "Manajri",
+        "instructions": "1 kg"
+      },
+      "totalAmount": 508,
+      "paymentMethod": "Cash / UPI on Delivery"
+    },
+    {
+      "id": "SB-1002",
+      "status": "New",
+      "createdAt": "2026-08-10T10:13:55.518Z",
+      "items": [
+        {
+          "id": "p1",
+          "name": "Pomegranate",
+          "localName": "Anar",
+          "category": "Fruits",
+          "price": 199,
+          "unit": "1 kg",
+          "unitOptions": [
+            "1 kg",
+            "2 kg",
+            "3 kg",
+            "5 kg"
+          ],
+          "shortDescription": "Sweet, juicy ruby-red farm fresh pomegranates.",
+          "image": "/uploads/pomegranate.jpg",
+          "inStock": true,
+          "badge": "Bestseller",
+          "minQty": 1,
+          "quantity": 1
+        }
+      ],
+      "customer": {
+        "fullName": "Abhiram kurambhatti",
+        "mobileNumber": "9552050093",
+        "flatNo": "B-1101",
+        "societyName": "Dreams Avani",
+        "address": "Pune, Maharashtra",
+        "landmark": "Manajri",
+        "instructions": "Leave prom 1kg"
+      },
+      "totalAmount": 199,
+      "paymentMethod": "Cash / UPI on Delivery"
+    },
+    {
+      "id": "SB-1001",
+      "status": "Out for Delivery",
+      "createdAt": "2026-08-10T10:02:38.150Z",
+      "items": [
+        {
+          "id": "p1",
+          "name": "Pomegranate",
+          "price": 199,
+          "unit": "1 kg",
+          "quantity": 2
+        },
+        {
+          "id": "p2",
+          "name": "Custard Apple",
+          "price": 199,
+          "unit": "1 kg",
+          "quantity": 1
+        }
+      ],
+      "customer": {
+        "fullName": "Amit Deshmukh",
+        "mobileNumber": "9876543210",
+        "flatNo": "A-304",
+        "societyName": "Kothrud Heights",
+        "address": "Ideal Colony, Kothrud, Pune",
+        "landmark": "Near Anand Nagar Metro Station",
+        "instructions": "Call before arrival, ring bell once."
+      },
+      "totalAmount": 597,
+      "paymentMethod": "Cash / UPI on Delivery",
+      "updatedAt": "2026-08-10T10:02:55.172Z"
+    }
+  ],
+  "settings": {
+    "sellerPhone": "8087506237",
+    "formattedSellerPhone": "80875 06237",
+    "sellerEmail": "orders@sundaybasket.in",
+    "deliveryFee": 0,
+    "minOrderValue": 0,
+    "freeDeliveryThreshold": 0,
+    "orderCutoffNotice": "Order before Wednesday 10 PM for Weekend Delivery in Pune",
+    "selectedPuneLocations": [
+      "Kothrud",
+      "Baver",
+      "Aundh",
+      "Wakad",
+      "Hinjawadi",
+      "Viman Nagar",
+      "Kharadi",
+      "Hadapsar",
+      "Pimple Saudagar",
+      "Magarpatta"
+    ],
+    "notificationsEnabled": {
+      "whatsapp": true,
+      "dashboard": true,
+      "webhook": false,
+      "webhookUrl": ""
+    }
+  },
+  "nextOrderNum": 1006
+}
