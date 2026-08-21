@@ -1,7 +1,7 @@
 import React from 'react';
 import { Leaf, PhoneCall, Instagram, MapPin, MessageCircle, Heart } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ onOpenGallery }) {
   const locations = [
     "Kothrud", "Baner", "Aundh", "Wakad", "Hinjawadi", 
     "Viman Nagar", "Kharadi", "Hadapsar", "Pimple Saudagar", "Magarpatta"
@@ -29,7 +29,14 @@ export default function Footer() {
             Bringing premium, handpicked, fresh farm produce directly to your doorstep in Pune. Support local agriculture and enjoy seasonal sweetness in every bite.
           </p>
 
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-2 pt-2">
+            <button
+              onClick={onOpenGallery}
+              className="p-2.5 bg-farm-900 hover:bg-farm-800 text-emerald-300 rounded-xl transition-colors border border-farm-800 flex items-center gap-2 text-xs font-semibold"
+            >
+              <span>📸 Farm Photos & Videos</span>
+            </button>
+
             <a
               href="https://wa.me/918087506237"
               target="_blank"

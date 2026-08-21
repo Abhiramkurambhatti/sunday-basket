@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Camera, Play, ExternalLink, Image as ImageIcon, Sparkles, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Camera, Play, Image as ImageIcon, Sparkles, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function FarmGalleryModal({ isOpen, onClose }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -8,7 +8,7 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  // Farm Gallery items extracted from Google Photos album: https://photos.app.goo.gl/4xMtVQjkimeF2m6B6
+  // Farm Gallery items with high-res photos
   const galleryItems = [
     {
       id: 1,
@@ -30,11 +30,10 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
     },
     {
       id: 3,
-      title: "Farm Harvest Video",
+      title: "Fresh Orchard Harvest Walkthrough",
       category: "videos",
-      type: "video",
+      type: "image",
       url: "/uploads/gallery/farm_gallery_09.jpg",
-      videoUrl: "https://photos.app.goo.gl/4xMtVQjkimeF2m6B6",
       caption: "Watch our fresh harvest process directly in the fields.",
       badge: "Harvest Video"
     },
@@ -76,11 +75,10 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
     },
     {
       id: 8,
-      title: "Sorting & Quality Check",
+      title: "Sorting & Quality Inspection",
       category: "videos",
-      type: "video",
+      type: "image",
       url: "/uploads/gallery/farm_gallery_10.jpg",
-      videoUrl: "https://photos.app.goo.gl/4xMtVQjkimeF2m6B6",
       caption: "Careful grading and basket packing for home delivery.",
       badge: "Video Walkthrough"
     },
@@ -178,76 +176,53 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
               </h2>
               <p className="text-xs text-farm-200 flex items-center gap-1.5 mt-0.5">
                 <Sparkles className="w-3 h-3 text-amber-300" />
-                Real Farm Photos & Videos from Pune Fields
+                Real Farm Photos & Harvest Moments
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <a
-              href="https://photos.app.goo.gl/4xMtVQjkimeF2m6B6"
-              target="_blank"
-              rel="noreferrer"
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-white border border-white/20 transition-all"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Full Google Album</span>
-            </a>
-            <button
-              onClick={onClose}
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Category Navigation Bar */}
-        <div className="bg-cream-50 border-b border-cream-200 px-4 py-3 flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                activeCategory === 'all'
-                  ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
-                  : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
-              }`}
-            >
-              All Media ({galleryItems.length})
-            </button>
-            <button
-              onClick={() => setActiveCategory('photos')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeCategory === 'photos'
-                  ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
-                  : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
-              }`}
-            >
-              <ImageIcon className="w-3.5 h-3.5 text-emerald-600" />
-              Farm Photos
-            </button>
-            <button
-              onClick={() => setActiveCategory('videos')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeCategory === 'videos'
-                  ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
-                  : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
-              }`}
-            >
-              <Play className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-              Harvest Videos
-            </button>
-          </div>
-
-          <a
-            href="https://photos.app.goo.gl/4xMtVQjkimeF2m6B6"
-            target="_blank"
-            rel="noreferrer"
-            className="sm:hidden text-xs text-farm-800 font-bold flex items-center gap-1 shrink-0"
+        <div className="bg-cream-50 border-b border-cream-200 px-4 py-3 flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <button
+            onClick={() => setActiveCategory('all')}
+            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+              activeCategory === 'all'
+                ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
+                : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
+            }`}
           >
-            <span>Google Album</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+            All Media ({galleryItems.length})
+          </button>
+          <button
+            onClick={() => setActiveCategory('photos')}
+            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              activeCategory === 'photos'
+                ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
+                : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
+            }`}
+          >
+            <ImageIcon className="w-3.5 h-3.5 text-emerald-600" />
+            Farm Photos
+          </button>
+          <button
+            onClick={() => setActiveCategory('videos')}
+            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              activeCategory === 'videos'
+                ? 'bg-farm-900 text-white shadow-md shadow-farm-900/20'
+                : 'bg-white text-slate-700 hover:bg-cream-200 border border-slate-200'
+            }`}
+          >
+            <Play className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+            Harvest Videos
+          </button>
         </div>
 
         {/* Gallery Grid Body */}
@@ -274,8 +249,8 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
                   </span>
 
                   {/* Video Overlay Indicator */}
-                  {item.type === 'video' && (
-                    <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] flex items-center justify-center group-hover:bg-slate-950/20 transition-colors">
+                  {item.category === 'videos' && (
+                    <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px] flex items-center justify-center group-hover:bg-slate-950/10 transition-colors">
                       <div className="w-10 h-10 rounded-full bg-amber-500/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                         <Play className="w-5 h-5 fill-white ml-0.5" />
                       </div>
@@ -300,27 +275,15 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
             ))}
           </div>
 
-          {/* Footer Callout Link to Original Album */}
-          <div className="mt-8 p-4 rounded-2xl bg-farm-50 border border-farm-200 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-farm-800 text-white flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-emerald-300" />
-              </div>
-              <div>
-                <h4 className="font-bold text-farm-950 text-sm">100% Genuine Farm Photos</h4>
-                <p className="text-xs text-farm-700">Explore full original high-resolution album directly on Google Photos.</p>
-              </div>
+          {/* Footer Quality Badge */}
+          <div className="mt-8 p-4 rounded-2xl bg-farm-50 border border-farm-200 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-farm-800 text-white flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-5 h-5 text-emerald-300" />
             </div>
-
-            <a
-              href="https://photos.app.goo.gl/4xMtVQjkimeF2m6B6"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-xl bg-farm-800 hover:bg-farm-900 text-white text-xs font-bold flex items-center gap-2 transition-all shadow-md shadow-farm-800/10 w-full sm:w-auto justify-center"
-            >
-              <span>Open Google Photos Album</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            <div>
+              <h4 className="font-bold text-farm-950 text-sm">100% Genuine Sunday Basket Farm Harvest</h4>
+              <p className="text-xs text-farm-700">All fruits and vegetables are handpicked directly from our Pune fields every weekend.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -350,37 +313,11 @@ export default function FarmGalleryModal({ isOpen, onClose }) {
           </button>
 
           <div className="max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center">
-            {lightboxItem.type === 'video' ? (
-              <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center justify-center border border-slate-800">
-                <img
-                  src={lightboxItem.url}
-                  alt={lightboxItem.title}
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-slate-950/50 flex flex-col items-center justify-center p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-2xl mb-4 animate-bounce">
-                    <Play className="w-8 h-8 fill-white ml-1" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{lightboxItem.title}</h3>
-                  <p className="text-xs text-slate-300 max-w-md mb-6">{lightboxItem.caption}</p>
-                  <a
-                    href="https://photos.app.goo.gl/4xMtVQjkimeF2m6B6"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs flex items-center gap-2 transition-all shadow-lg shadow-amber-500/20"
-                  >
-                    <span>Play Full Video on Google Photos</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <img
-                src={lightboxItem.url}
-                alt={lightboxItem.title}
-                className="max-h-[75vh] w-auto object-contain rounded-2xl border border-slate-800 shadow-2xl"
-              />
-            )}
+            <img
+              src={lightboxItem.url}
+              alt={lightboxItem.title}
+              className="max-h-[75vh] w-auto object-contain rounded-2xl border border-slate-800 shadow-2xl"
+            />
 
             <div className="mt-4 text-center text-white max-w-xl">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">

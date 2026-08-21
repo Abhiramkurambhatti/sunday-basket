@@ -6,8 +6,9 @@ import CartDrawer from './components/CartDrawer';
 import CheckoutModal from './components/CheckoutModal';
 import OrderConfirmation from './components/OrderConfirmation';
 import AdminDashboard from './components/AdminDashboard';
+import FarmGalleryModal from './components/FarmGalleryModal';
 import Footer from './components/Footer';
-import { ShoppingBag, ArrowRight, PhoneCall, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ export default function App() {
   
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [orderSuccessData, setOrderSuccessData] = useState(null);
   
   const [isAdminView, setIsAdminView] = useState(false);
@@ -97,6 +99,7 @@ export default function App() {
         cartCount={totalCartCount}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenAdmin={() => setIsAdminView(!isAdminView)}
+        onOpenGallery={() => setIsGalleryOpen(true)}
         isAdminView={isAdminView}
       />
 
@@ -111,7 +114,10 @@ export default function App() {
           />
         ) : (
           <>
-            <Banner onBrowseClick={scrollToProducts} />
+            <Banner 
+              onBrowseClick={scrollToProducts} 
+              onOpenGallery={() => setIsGalleryOpen(true)}
+            />
             
             {isLoading ? (
               <div className="text-center py-20">
@@ -131,7 +137,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      {!isAdminView && <Footer />}
+      {!isAdminView && <Footer onOpenGallery={() => setIsGalleryOpen(true)} />}
 
       {/* Slide-over Cart Drawer */}
       <CartDrawer 
@@ -149,6 +155,12 @@ export default function App() {
         onClose={() => setIsCheckoutOpen(false)}
         cartItems={cartItems}
         onOrderSuccess={handleOrderSuccess}
+      />
+
+      {/* Farm Photos & Videos Modal */}
+      <FarmGalleryModal 
+        isOpen={isGalleryOpen}
+        onClose={() => setIsGalleryOpen(false)}
       />
 
       {/* Floating Sticky Mobile Cart Bar */}

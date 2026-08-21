@@ -1,7 +1,7 @@
 import React from 'react';
-import { Calendar, Truck, HeartHandshake, CheckCircle2, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, MessageCircle, ArrowRight, Sparkles, CheckCircle2, Camera } from 'lucide-react';
 
-export default function Banner({ onBrowseClick }) {
+export default function Banner({ onBrowseClick, onOpenGallery }) {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-farm-900 via-farm-800 to-farm-950 text-white py-8 sm:py-12 px-4 shadow-xl">
       {/* Subtle Background Pattern */}
@@ -52,6 +52,14 @@ export default function Banner({ onBrowseClick }) {
               <ArrowRight className="w-4 h-4" />
             </button>
 
+            <button
+              onClick={onOpenGallery}
+              className="w-full sm:w-auto bg-emerald-950/60 hover:bg-emerald-900 text-emerald-200 font-semibold px-5 py-3 rounded-full border border-emerald-500/30 transition-all text-xs sm:text-sm flex items-center justify-center gap-2 backdrop-blur-sm"
+            >
+              <Camera className="w-4 h-4 text-emerald-300" />
+              <span>View Farm Photos & Videos</span>
+            </button>
+
             <a
               href="https://chat.whatsapp.com/Ju1bQGnndEB0ihvkcKqYXM"
               target="_blank"
@@ -59,7 +67,7 @@ export default function Banner({ onBrowseClick }) {
               className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full border border-white/20 transition-all text-xs sm:text-sm flex items-center justify-center gap-2 backdrop-blur-sm"
             >
               <MessageCircle className="w-4 h-4 text-emerald-400" />
-              <span>Join Weekly WhatsApp Group</span>
+              <span>WhatsApp Group</span>
             </a>
           </div>
         </div>

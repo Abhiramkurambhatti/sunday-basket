@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShoppingBag, PhoneCall, Instagram, MapPin, ShieldCheck, Leaf } from 'lucide-react';
+import { ShoppingBag, PhoneCall, Instagram, ShieldCheck, Camera } from 'lucide-react';
 
-export default function Header({ cartCount, onOpenCart, onOpenAdmin, isAdminView }) {
+export default function Header({ cartCount, onOpenCart, onOpenAdmin, onOpenGallery, isAdminView }) {
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-farm-100 shadow-sm">
       {/* Top Banner Notice */}
@@ -12,6 +12,13 @@ export default function Header({ cartCount, onOpenCart, onOpenAdmin, isAdminView
             <span>🌿 Fresh Harvest Weekly • Delivery in Selected Pune Locations</span>
           </div>
           <div className="hidden md:flex items-center gap-4 text-farm-200">
+            <button
+              onClick={onOpenGallery}
+              className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-emerald-300"
+            >
+              <Camera className="w-3.5 h-3.5" /> Farm Photos & Videos
+            </button>
+            <span className="text-farm-700">•</span>
             <a 
               href="https://wa.me/918087506237" 
               target="_blank" 
@@ -57,6 +64,16 @@ export default function Header({ cartCount, onOpenCart, onOpenAdmin, isAdminView
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Farm Gallery Button */}
+          <button
+            onClick={onOpenGallery}
+            className="px-3 py-1.5 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 transition-all flex items-center gap-1.5 shadow-sm"
+            title="View Farm Photos & Videos"
+          >
+            <Camera className="w-3.5 h-3.5 text-emerald-700" />
+            <span className="hidden xs:inline">Farm Gallery</span>
+          </button>
+
           {/* Admin Toggle */}
           <button
             onClick={onOpenAdmin}
